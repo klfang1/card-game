@@ -4,20 +4,24 @@ def main():
       self.suit = suit
       self.value = value
 
+    def __repr__(self):
+      suits = ["Diamonds", "Clubs", "Hearts", "Spades"]
+      values = ["Two", "Three","Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace"]
+      suit_name = suits[self.suit]
+      value_name = values[self.value]
+      return value_name + " of " + suit_name
+
   class StandardDeck(list):
-    def __init(self):
+    def __init__(self):
       super().__init__()
       suits = list(range(4))
       values = list(range(13))
       [[self.append(Card(i, j)) for i in suits] for j in values]
 
   deck = StandardDeck()
-  for i in range(len(deck)):
-    print(i)
-  for i in deck:
-    print(i)
-    print(i.suit)
-    print(i.value)
+  for card in deck:
+    print(card)
+  print(len(deck))
   
 if __name__ == "__main__":
   main()
